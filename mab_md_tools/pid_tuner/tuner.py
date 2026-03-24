@@ -7,10 +7,10 @@ TARGET_POSITION = 10.0
 TEST_DURATION = 2.0
 SAMPLING_TIME = 0.01
 
-KP = 1.5
-KI = 0.1
-KD = 0.05
-I_MAX = 10.0
+KP = 10.500000
+KI = 1.5
+KD = 0.00
+I_MAX = 1.0
 
 def run_pid_test():
     candle = pyCandle.attachCandle(pyCandle.CAN_DATARATE_1M, pyCandle.USB)
