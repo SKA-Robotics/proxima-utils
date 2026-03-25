@@ -13,7 +13,7 @@ pip install -r requirements.txt
 python3 tuner.py
 ```
 
->[!info]
+>[!note]
 >Make sure that python script has permissions to access usb device 
 >[See more](https://askubuntu.com/questions/1048870/permission-denied-to-non-root-user-for-usb-device/1187646#1187646)
 
@@ -49,5 +49,3 @@ if __name__ == "__main__":
     run_pid_test(Mode.POSITION) # or Mode.VELOCITY
 
 ```
-
-![[Projects/Proxima/Software/proxima-utils/mab_md_tools/attachments/PID tuner - plots.png]]
