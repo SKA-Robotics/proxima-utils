@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 CAN_ID = 316
 TARGET_POSITION = 10.0
-TEST_DURATION = 2.0
+TEST_DURATION = 5.0
 SAMPLING_TIME = 0.01
 
 KP = 10.500000
@@ -16,7 +16,7 @@ def run_pid_test():
     candle = pyCandle.attachCandle(pyCandle.CAN_DATARATE_1M, pyCandle.USB)
 
     md = pyCandle.MD(CAN_ID, candle)
-    if md.init() != pyCandle.OK:
+    if md.init() != pyCandle.MD_Error_t.OK:
         print(f"Błąd: Nie znaleziono sterownika o ID {CAN_ID}")
         return
 
@@ -43,8 +43,9 @@ def run_pid_test():
             md.setTargetPosition(TARGET_POSITION)
             
             pos, err = md.getPosition()
+            # print(err)
             
-            if err == pyCandle.OK:
+            if err == pyCandle.MD_Error_t.OK:
                 timestamps.append(current_elapsed)
                 actual_positions.append(pos)
                 target_positions.append(TARGET_POSITION)
